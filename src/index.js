@@ -4,6 +4,9 @@ const db = require('./models');
 const authController = require('./controllers/auth');
 
 const app = express();
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
 // pré-fixo das rotas  /auth/sign-in
 // /auth/sign-up
 app.use('/auth', authController);
