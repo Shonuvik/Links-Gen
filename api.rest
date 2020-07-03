@@ -1,14 +1,16 @@
 @baseUrl = http://localhost:3001
 @contentType = application/json
 
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiaWF0IjoxNTkzODAyODk0LCJleHAiOjE1OTM4MDQ2OTR9.UmoTaoWKv7mgSAuoXSmlUFtkZ_4vQInbZvcGyy5OysI
 
 ### Create a Account
 
 POST  {{baseUrl}}/auth/sign-up
 Content-Type: {{contentType}}
+Authorization: Bearer {{token}}
 
 {
-    "email": "marlon9.shovuik@strauus.com",
+    "email": "marlon2.shovuik@strauus.com",
     "password": "123456",
     "password_confirmation":"123456"
 }
@@ -17,6 +19,7 @@ Content-Type: {{contentType}}
 
 POST  {{baseUrl}}/auth/sign-in
 Content-Type: {{contentType}}
+Authorization: Bearer {{token}}
 
 {
     "email": "marlon.shovuik@strauus.com",
@@ -28,11 +31,13 @@ Content-Type: {{contentType}}
 
 GET {{baseUrl}}/link
 Content-Type: {{contentType}}
+Authorization: Bearer {{token}}
 
 ### Create Link
 
 POST {{baseUrl}}/link
 Content-Type: {{contentType}}
+
 
 {
     "label": "Meine Site",
@@ -42,13 +47,14 @@ Content-Type: {{contentType}}
 
 ### Get a Link by id
 
-GET {{baseUrl}}/link/1
+GET {{baseUrl}}/link/
 Content-Type: {{contentType}}
-
+Authorization: Bearer {{token}}
 ### Update a Link
 
 PUT {{baseUrl}}/link/1
 Content-Type: {{contentType}}
+
 
 {
     "label": "Meu novo Site",
