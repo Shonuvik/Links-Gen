@@ -4,11 +4,22 @@
 
 ### Create a Account
 
-GET {{baseUrl}}/auth/sign-up
+POST  {{baseUrl}}/auth/sign-up
 Content-Type: {{contentType}}
 
 {
-    "email": "marlon6.shovuik@strauus.com",
+    "email": "marlon9.shovuik@strauus.com",
     "password": "123456",
     "password_confirmation":"123456"
+}
+
+### Sign in
+
+POST  {{baseUrl}}/auth/sign-in
+Content-Type: {{contentType}}
+
+{
+    "email": "marlon.shovuik@strauus.com",
+    "password": "123456"
+    
 }
