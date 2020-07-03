@@ -1,13 +1,13 @@
 @baseUrl = http://localhost:3001
 @contentType = application/json
 
-@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiaWF0IjoxNTkzODAyODk0LCJleHAiOjE1OTM4MDQ2OTR9.UmoTaoWKv7mgSAuoXSmlUFtkZ_4vQInbZvcGyy5OysI
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTAsImlhdCI6MTU5MzgwNTg0NywiZXhwIjoxNTkzODA3NjQ3fQ.TutZHVPsQtbO4nbVFjmY8Mo3lme8zyivevWPw6TDX1k
 
 ### Create a Account
 
 POST  {{baseUrl}}/auth/sign-up
 Content-Type: {{contentType}}
-Authorization: Bearer {{token}}
+
 
 {
     "email": "marlon2.shovuik@strauus.com",
@@ -19,10 +19,10 @@ Authorization: Bearer {{token}}
 
 POST  {{baseUrl}}/auth/sign-in
 Content-Type: {{contentType}}
-Authorization: Bearer {{token}}
+
 
 {
-    "email": "marlon.shovuik@strauus.com",
+    "email": "marlon2.shovuik@strauus.com",
     "password": "123456"
     
 }
@@ -37,6 +37,7 @@ Authorization: Bearer {{token}}
 
 POST {{baseUrl}}/link
 Content-Type: {{contentType}}
+Authorization: Bearer {{token}}
 
 
 {
