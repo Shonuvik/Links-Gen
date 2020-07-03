@@ -10,6 +10,10 @@ module.exports = (sequelize, DataTypes) =>{
             allowNull: false,
         },
     });
+
+    Account.associate = (models) =>{
+        Account.hasMany(models.Link, {foreignKey: 'accountId'});
+    };
     //remove do json o campo senha, para que não apareça
     //os valores da senha encriptada
     Account.prototype.toJSON = function() {

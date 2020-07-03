@@ -23,3 +23,40 @@ Content-Type: {{contentType}}
     "password": "123456"
     
 }
+
+### List Links
+
+GET {{baseUrl}}/link
+Content-Type: {{contentType}}
+
+### Create Link
+
+POST {{baseUrl}}/link
+Content-Type: {{contentType}}
+
+{
+    "label": "Meine Site",
+    "url": "https://www.instagram.com/shonuvikdev/",
+    "isSocial": "false"
+}
+
+### Get a Link by id
+
+GET {{baseUrl}}/link/1
+Content-Type: {{contentType}}
+
+### Update a Link
+
+PUT {{baseUrl}}/link/1
+Content-Type: {{contentType}}
+
+{
+    "label": "Meu novo Site",
+    "url": "https://www.instagram.com/shonuvikdev/",
+    "isSocial": true
+}
+
+### Delete a Link
+
+DELETE  {{baseUrl}}/link/2
+Content-Type: {{contentType}}
