@@ -3,6 +3,7 @@
 
 @token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTAsImlhdCI6MTU5MzgwNTg0NywiZXhwIjoxNTkzODA3NjQ3fQ.TutZHVPsQtbO4nbVFjmY8Mo3lme8zyivevWPw6TDX1k
 
+@refreshToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTAsInZlcnNpb24iOjAsImlhdCI6MTU5MzgwOTk2MywiZXhwIjoxNTk2NDAxOTYzfQ.U9guxqlJHnhAFoAUmsGNumfJk8VBWhtRDKEVDyRSN78
 ### Create a Account
 
 POST  {{baseUrl}}/auth/sign-up
@@ -26,6 +27,12 @@ Content-Type: {{contentType}}
     "password": "123456"
     
 }
+
+### Refresh Token
+POST  {{baseUrl}}/auth/refresh
+Content-Type: {{contentType}}
+Authorization: Bearer {{refreshToken}}
+
 
 ### List Links
 

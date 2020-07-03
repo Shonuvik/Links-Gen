@@ -1,4 +1,4 @@
-const { verifyJwt } = require("../helpers/jwt");
+const { verifyJwt, getTokenFromHeaders } = require("../helpers/jwt");
 
 
 const checkJwt = (req, res, next) =>{
@@ -8,13 +8,13 @@ const checkJwt = (req, res, next) =>{
 
     //aliás: estou renomeado a variavel url para path
     const {url: path} = req;
-    
-    const excludedPaths = ['/auth/sign-in', '/auth/sign-up'];
+    //rotas excluidas, afim de que não seja necessario gerar um token
+    //para elas, pois já detêm um acesso no server 
+    const excludedPaths = ['/auth/sign-in', '/auth/sign-up', '/auth/refresh'];
     const isExcluded = !!excludedPaths.find((p) => p.startsWith(path));
     if(isExcluded) return next();
 
-   let token = req.headers['authorization'];
-   token = token ? token.slice(7,  token.lenght) : null;
+   const token = getTokenFromHeaders(req.headers);
    if(!token) {
        return res.jsonUnauthorized(null, 'Invalid token');
    }
